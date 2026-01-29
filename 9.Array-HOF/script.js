@@ -86,6 +86,10 @@ console.log(lessThan180);
 
 const marks = [18, 5, 17, 12, 20, 16, 14];
 
+const average = marks.reduce((acc, mark) => acc + mark) / marks.length;
+
+console.log(`Average : ${average.toFixed(2)}`); //affiche 2 chiffre après la virgule
+
 /* 
     5. Array.prototype.sort(callback(firstEl, secondEl))
 
@@ -111,7 +115,15 @@ const marks = [18, 5, 17, 12, 20, 16, 14];
 
 const letters = ["z", "b", "a", "d", "e"];
 
+letters.sort();
+
+console.log(letters);
+
 const numbers2 = [10, 55, 2, 250, 500, 85];
+
+numbers2.sort((a, b) => a - b);
+
+console.log(numbers2);
 
 // On peut aussi trier des tableaux d'objets
 const store = [
@@ -128,3 +140,5 @@ const store = [
     price: 2,
   },
 ];
+
+console.log(store.sort((a, b) => a.price - b.price));
