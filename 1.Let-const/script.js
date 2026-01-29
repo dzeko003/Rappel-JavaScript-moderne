@@ -71,3 +71,25 @@ const hoistedConst = "Je suis une variable hoisted (const)";
     5. Une variable var déclarée globalement se fait enregistrer dans l'objet global, pouvant provoquer des bugs de clash entre variables globales.
     Let et const peuvent se faire enregistrer globalement, mais sans être accessibles comme propriétés directes de window, elles sont inscrites dans l'environnement lexical de l'objet global (l'ensemble des déclarations accessibles par ce dernier).
 */
+
+var globalVar = "Je suis une variable globale (var)";
+let globalLet = "Je suis une variable globale (let)";
+const globalConst = "Je suis une variable globale (const)";
+
+console.log(window.globalVar); // Affiche: "Je suis une variable globale (var)"
+console.log(window.globalLet); // Affiche: undefined
+console.log(window.globalConst); // Affiche: undefined
+
+/* 
+    En résumé, utilisez let pour les variables qui peuvent changer de valeur et const pour les constantes. Évitez d'utiliser var pour minimiser les erreurs liées à la
+     portée des variables.
+*/
+
+// Exemple d'utilisation de let et const
+const pi = 3.14;
+let radius = 5;
+let area = pi * radius * radius;
+console.log(`L'aire du cercle est: ${area}`);
+radius = 10; // On peut modifier radius car c'est une variable let
+area = pi * radius * radius;
+console.log(`L'aire du cercle avec un rayon de 10 est: ${area}`);
