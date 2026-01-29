@@ -6,41 +6,43 @@
     Cela ouvre la voie à de nombreuses solutions et à une plus grande fléxibilité.
 */
 
+function customFilter(arr, callback) {
+  const filteredArray = [];
 
-const salaries = [1200,5000,4000,2500,3450,1800]
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i])) {
+      filteredArray.push(arr[i]);
+    }
+  }
 
+  return filteredArray;
+}
 
+const salaries = [1200, 5000, 4000, 2500, 3450, 1800];
 
-
-
-
-
-
-
-
-
-
+console.log(customFilter(salaries, (salary) => salary > 3000));
 
 const countries = [
   {
-      name: "Japan",
-      gdp: 4941
+    name: "Japan",
+    gdp: 4941,
   },
   {
-      name: "Germany",
-      gdp: 4260
+    name: "Germany",
+    gdp: 4260,
   },
   {
-      name: "South Korea",
-      gdp: 1811
+    name: "South Korea",
+    gdp: 1811,
   },
   {
-      name: "India",
-      gdp: 3176
+    name: "India",
+    gdp: 3176,
   },
   {
-      name: "Canada",
-      gdp: 1988
+    name: "Canada",
+    gdp: 1988,
   },
-]
+];
 
+console.log(customFilter(countries, (country) => country.gdp >= 2000));
