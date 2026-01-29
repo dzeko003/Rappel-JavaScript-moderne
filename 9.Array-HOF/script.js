@@ -21,10 +21,9 @@
 
 */
 
-const numbers = [1,2,3,4,5,6]
+const numbers = [1, 2, 3, 4, 5, 6];
 
-
-
+numbers.forEach((num, index, array) => console.log(num, index, array));
 
 /* 
     2. Array.prototype.map(callback(element, index, array))
@@ -39,18 +38,23 @@ const numbers = [1,2,3,4,5,6]
 const people = [
   {
     name: "Pedro",
-    age: 25
+    age: 25,
   },
   {
     name: "Sara",
-    age: 26
+    age: 26,
   },
   {
     name: "Maria",
-    age: 27
-  }
-]
+    age: 27,
+  },
+];
 
+// On utilise map quand on veut retourner un nouveau tableau
+
+const names = people.map((people) => people.name);
+
+console.log(names);
 
 /* 
     3. Array.prototype.filter(callback(el, index, array))
@@ -61,9 +65,11 @@ const people = [
     Permet de filtrer les éléments d'un tableau.
 */
 
-const heights = [170,185,198,162,187,155,178,207,201,189]
+const heights = [170, 185, 198, 162, 187, 155, 178, 207, 201, 189];
 
+const lessThan180 = heights.filter((height) => height < 180);
 
+console.log(lessThan180);
 
 /* 
     4. Array.prototype.reduce(callback(accumulator, currentValue, currentIndex, array), valeurInitiale)
@@ -78,8 +84,7 @@ const heights = [170,185,198,162,187,155,178,207,201,189]
 
 */
 
-const marks = [18,5,17,12,20,16,14]
-
+const marks = [18, 5, 17, 12, 20, 16, 14];
 
 /* 
     5. Array.prototype.sort(callback(firstEl, secondEl))
@@ -104,25 +109,22 @@ const marks = [18,5,17,12,20,16,14]
     [|4,10,12|]
 */
 
-const letters = ["z","b","a","d","e"];
+const letters = ["z", "b", "a", "d", "e"];
 
-
-const numbers2 = [10,55,2,250,500,85]
-
+const numbers2 = [10, 55, 2, 250, 500, 85];
 
 // On peut aussi trier des tableaux d'objets
 const store = [
-    {
-        item: "Cahier",
-        price: 20
-    },
-    {
-        item: "Sac",
-        price: 60
-    },
-    {
-        item: "Stylo",
-        price: 2
-    },
-]
-
+  {
+    item: "Cahier",
+    price: 20,
+  },
+  {
+    item: "Sac",
+    price: 60,
+  },
+  {
+    item: "Stylo",
+    price: 2,
+  },
+];
